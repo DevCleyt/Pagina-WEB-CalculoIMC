@@ -2,6 +2,7 @@
 
 
 /* Estilos gerais */
+
 :root {
     --primary-color: #107aa1a8;
 }
@@ -14,120 +15,121 @@
 body {
     margin: 0;
     padding: 0;
-    background: var(--primary-color);
+    background: #084F8C;
     font: normal 16px/1.5 'Open Sans', sans-serif;
     color: #333;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
     min-height: 100vh;
 }
 
+header {
+    background-color: #073359;
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+nav {
+    background-color: #084F8C;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.2rem;
+}
+
+nav a:hover {
+    color: #05F2F2;
+}
+
 .container {
-    max-width: 600px;
+    flex: 1;
+    max-width: 800px;
     width: 100%;
-    margin: 20px;
+    margin: 20px auto;
     background-color: white;
     padding: 20px;
-    border-radius: 30px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.219);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 #encapsular {
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+#imc, #resultado-imc {
+    width: 48%;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.tabela {
+    font-size: 1.5rem;
+    color: #073359;
+    margin-bottom: 10px;
 }
 
 form {
     display: flex;
     flex-direction: column;
-    padding: 5px;
-    margin-bottom: 20px;
+}
+
+form label {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: #073359;
 }
 
 form input {
     width: 100%;
     height: 40px;
     padding: 10px;
-    margin: 10px 0;
+    margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
 form input:focus {
-    outline: 1px solid #333;
-}
-
-h1 {
-    font-size: 44px;
-    text-align: center;
-}
-
-.titulo2 {
-    font-size: 35px;
-}
-
-.tabela {
-    font-size: 1.5rem;
-}
-
-p {
-    text-align: justify;
-    font-size: 1.2rem;
-}
-
-label {
-    font-weight: bold;
-    font-size: 1.5em;
+    outline: 1px solid #073359;
 }
 
 button {
     width: 100%;
     height: 40px;
-    font-size: 20px;
-    padding: 5px 10px;
-    background: var(--primary-color);
+    font-size: 1.2rem;
+    background-color: #073359;
     color: white;
-    border: solid 0px;
-    border-radius: 10px;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: rgb(12, 74, 168);
-    color: black;
+    background-color: #084F8C;
 }
 
-.paragrafo-res {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    background-color: rgb(133, 231, 190);
-    padding: 10px 20px;
-    border-radius: 10px;
-}
-
-.paragrafo-resultado {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-}
-
-.bad {
-    background-color: #f44336;
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-}
-
-#res-calculo p {
+#res-calculo {
+    margin-top: 20px;
     padding: 10px;
     border-radius: 5px;
     text-align: center;
     font-weight: bold;
-    margin-top: 10px;
 }
 
 .abaixo-peso {
@@ -150,85 +152,34 @@ button:hover {
     color: #fff;
 }
 
+footer {
+    background-color: #073359;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: auto;
+}
+
+footer p {
+    margin: 0;
+}
+
 /* Media Queries para dispositivos móveis */
 @media (max-width: 768px) {
-    h1 {
-        font-size: 36px;
-    }
-
-    .titulo2 {
-        font-size: 28px;
-    }
-
-    .tabela {
-        font-size: 1.2rem;
-    }
-
-    p {
-        font-size: 1rem;
-    }
-
-    label {
-        font-size: 1.2em;
-    }
-
-    button {
-        font-size: 18px;
-    }
-
     #encapsular {
         flex-direction: column;
-        align-items: center;
     }
 
     #imc, #resultado-imc {
         width: 100%;
-        text-align: center;
+        margin-bottom: 15px;
     }
 
-    form input {
-        height: 35px;
-        font-size: 14px;
+    header h1 {
+        font-size: 2rem;
     }
 
-    .container {
-        padding: 15px;
-        margin: 10px;
-    }
-}
-
-@media (max-width: 480px) {
-    h1 {
-        font-size: 28px;
-    }
-
-    .titulo2 {
-        font-size: 24px;
-    }
-
-    .tabela {
+    nav a {
         font-size: 1rem;
-    }
-
-    p {
-        font-size: 0.9rem;
-    }
-
-    label {
-        font-size: 1em;
-    }
-
-    button {
-        font-size: 16px;
-    }
-
-    form input {
-        height: 30px;
-        font-size: 12px;
-    }
-
-    .container {
-        padding: 10px;
-        margin: 5px;
     }
 }
